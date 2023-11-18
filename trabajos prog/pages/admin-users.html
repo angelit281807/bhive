@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/guard.js"></script>
+
+</head>
+
+<body>
+
+    <section id="navbar">
+    </section>
+
+
+    <main>
+        <section class="section-padding mt-5">
+            <div class="text-center text-white mb-4">
+                <h2>ADMINISTRADOR DE USUARIOS</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-12 bg-dark rounded-3 table-responsive">
+                        <!-- #Tabla -->
+                        <div class="mb-3">
+                            <label for="filtrar" class="form-label m-2 fw-bold text-white">Filtrar</label>
+                            <input type="text" class="form-control" id="filtrar" placeholder="Nombre Usuario">
+                        </div>
+
+                        <table class="table table-dark table-striped text-center align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th scope="col">Fullname</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Password</th>
+                                    <th scope="col">Role</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-users" class="table-group-divider">
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-dark text-white">
+                        <!-- #Formulario -->
+                        <form id="formularioUsuario">
+
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Usuario</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Fullname</label>
+                                    <input type="text" name="name" class="form-control" id="name"
+                                        placeholder="Leonel Messi" required minlength="3" maxlength="70">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="example@example.com"
+                                        minlength="3" maxlength="70" required>
+                                </div>
+
+                                <div class="mb-3 d-flex gap-3">
+                                    <div class="w-100">
+                                        <label for="password" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password" minlength="3"
+                                            maxlength="70" required>
+                                    </div>
+                                    <div class="w-100">
+                                        <label for="role" class="form-label">Role</label>
+                                        <select class="form-select" id="role" name="role" required>
+                                            <option value=""></option>
+                                            <option value="ROLE_CLIENT">Cliente</option>
+                                            <option value="ROLE_ADMIN">Administrador</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Editar Usuario</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/admin-users.js"></script>
+    <script src="/js/storage.js"></script>
+    <script src="/js/user-info.js"></script>
+    <script src="/js/login.js"></script>
+
+
+
+</body>
+
+</html>
